@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="865bd671-a9d9-4349-90ac-48a1f78026d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/sistemaFinanciamento.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modelo/Financiamento.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoSemana5/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoSemana5/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoSemana5/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoSemana5/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoSemana5/ProjetoSemana5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoSemana5/src/Caminhao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoSemana5/src/Moto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ProjetoSemana5/src/Veiculo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +42,8 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -48,5 +56,16 @@
       <updated>1718540250191</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
