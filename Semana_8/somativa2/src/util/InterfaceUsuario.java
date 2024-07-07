@@ -19,6 +19,36 @@ public class InterfaceUsuario {
     private int vagasDeGaragem;
     private int numeroDoAndar;
 
+    // Atributo TERRENO
+
+    public String tipoDaZona;
+
+
+    public int escolherTipoImovel() {
+        Scanner scanner = new Scanner(System.in);
+        int opcao = 0;
+        boolean inputValido = false;
+
+        while (!inputValido) {
+            System.out.println("Escolha o tipo de imóvel:");
+            System.out.println("1 - Casa");
+            System.out.println("2 - Apartamento");
+            System.out.println("3 - Terreno");
+
+            try {
+                opcao = scanner.nextInt();
+                if (opcao < 1 || opcao > 3) {
+                    throw new IllegalArgumentException("Opção inválida. Escolha um número entre 1 e 3.");
+                }
+                inputValido = true;
+            } catch (Exception e) {
+                System.out.println("Opção inválida. Por favor, escolha novamente.");
+                scanner.nextLine(); // Limpar o buffer do scanner
+            }
+        }
+
+        return opcao;
+    }
     public void pedirValorImovel() {
         Scanner scanner = new Scanner(System.in);
         boolean inputValido = false;
@@ -41,8 +71,6 @@ public class InterfaceUsuario {
 
         }
     }
-
-
     public void pedirPrazoFinanciamento() {
         Scanner scanner = new Scanner(System.in);
         boolean inputValido = false;
@@ -106,7 +134,6 @@ public class InterfaceUsuario {
             }
         }
     }
-
     public void pedirAreaTerreno() {
         Scanner scanner = new Scanner(System.in);
         boolean inputValido = false;
@@ -128,7 +155,6 @@ public class InterfaceUsuario {
             }
         }
     }
-
     public void pedirVagaDeGaragem() {
         Scanner scanner = new Scanner(System.in);
         boolean inputValido = false;
@@ -150,7 +176,6 @@ public class InterfaceUsuario {
             }
         }
     }
-
     public void pedirNumeroDoAndar() {
         Scanner scanner = new Scanner(System.in);
         boolean inputValido = false;
@@ -171,6 +196,25 @@ public class InterfaceUsuario {
                 System.out.println(e.getMessage());
             }
         }
+    }
+
+    public String pedirTipoDaZona() {
+        Scanner scanner = new Scanner(System.in);
+        String tipoDaZona = null;
+        boolean inputValido = false;
+
+        while (!inputValido) {
+            System.out.println("Qual o tipo de zona do terreno (Residencial ou Comercial)? ");
+            tipoDaZona = scanner.nextLine().trim();
+
+            if (tipoDaZona.equalsIgnoreCase("Residencial") || tipoDaZona.equalsIgnoreCase("Comercial")) {
+                inputValido = true;
+            } else {
+                System.out.println("Opção inválida. Por favor, escolha entre 'Residencial' ou 'Comercial'.");
+            }
+        }
+
+        return tipoDaZona;
     }
 
     // Getter para obter o valor do imovel
@@ -195,10 +239,14 @@ public class InterfaceUsuario {
     public double getAreaDoTerreno() { return this.areaTerreno; }
 
     // Getter para obter o numero de vagas de garagem
-    public double getVagasDeGaragem() { return this.vagasDeGaragem; }
+    public int getVagasDeGaragem() { return this.vagasDeGaragem; }
 
     // Getter para obter o numero do andar
-    public double getNumeroDoAndar() { return this.numeroDoAndar; }
+    public int getNumeroDoAndar() { return this.numeroDoAndar; }
+
+    public String getTipoDaZona() {
+        return this.tipoDaZona;
+    }
 
     void imprimirDados(int prazoFinanciamento) {
         System.out.println("O prazo de financiamento foi: ");

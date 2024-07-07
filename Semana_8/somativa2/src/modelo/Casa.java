@@ -2,14 +2,12 @@ package modelo;
 
 import util.AcrescimoMaiorQueJurosException;
 
-public class Casa extends Financiamento {
+import java.io.Serializable;
 
+public class Casa extends Financiamento implements Serializable {
     private double areaConstruida;
     private double areaTerreno;
     private double valorJurosMensal;
-
-//    double pagamentoMensalSemJuros = getValorImovel() / (getPrazoFinanciamento()*12);
-
 
     public Casa(double valorImovelInicial, int prazoFinanciamentoInicial, double taxaJurosAnualInicial, double areaConstruida, double areaTerreno) {
         super(valorImovelInicial, prazoFinanciamentoInicial, taxaJurosAnualInicial);
@@ -17,7 +15,7 @@ public class Casa extends Financiamento {
         this.areaTerreno = areaTerreno;
     }
 
-    // Getter para obter a area construida
+    // Getter para obter a area construída
     public double getAreaConstruida() {
         return this.areaConstruida;
     }
@@ -28,12 +26,13 @@ public class Casa extends Financiamento {
     }
 
     private void isAcrescimoMaiorQueJuros(double valorAcrescimo, double valorJurosMensal) throws AcrescimoMaiorQueJurosException {
-
         if (valorAcrescimo > valorJurosMensal) {
             throw new AcrescimoMaiorQueJurosException(
-                    String.format("O acrescimo de R$ %.2f eh maior que os juros de R$ %.2f mensais", valorAcrescimo, valorJurosMensal));
+                    String.format("O acréscimo de R$ %.2f é maior que os juros de R$ %.2f mensais", valorAcrescimo, valorJurosMensal));
         }
     }
+
+
 
     public double pagamentoMensal() {
         double valorAcrescimo = 500;
@@ -49,5 +48,16 @@ public class Casa extends Financiamento {
         }
         return super.pagamentoMensal() + valorAcrescimo;
     }
-}
 
+    @Override
+    public String toString() {
+        return "TIPO DO IMOVEL: CASA" + "\n" +
+                "Valor do Imovel: " + getValorImovel() + "\n" +
+                "Prazo do Financiamento: " + getPrazoFinanciamento() + "\n" +
+                "Taxa de juros anual: " + getTaxaJurosAnual() + "\n" +
+                "Area construida: " + areaConstruida + "\n" +
+                "Area do terreno: " + areaTerreno + "\n";
+    }
+
+
+}
